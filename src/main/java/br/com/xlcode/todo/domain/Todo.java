@@ -1,10 +1,12 @@
 package br.com.xlcode.todo.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,7 +22,9 @@ public class Todo implements Serializable {
 
     private String titulo;
     private String descricao;
-    private LocalDateTime dataParaFinalizar;
+
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private Date dataParaFinalizar;
     private Boolean finalizado = false;
 
 }

@@ -11,6 +11,7 @@ import javax.servlet.Servlet;
 import java.net.URI;
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/todos")
 public class TodoResource {
